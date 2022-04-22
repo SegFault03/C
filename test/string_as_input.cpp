@@ -2,7 +2,6 @@
 using namespace std;
 //Demonstrating how to take string as an input
 //and convert it to an array of integers
-//Also demonstrating the use of strtok()
 
 int main()
 {
@@ -20,7 +19,7 @@ int main()
         temp+=s.at(i);
         else
         {
-            list.push_back(stoi(temp));//converting string to integers
+            list.push_back(stoi(temp));//converting string to integers, stoi() takes strings as input or char*
             temp="";
         }
     }
