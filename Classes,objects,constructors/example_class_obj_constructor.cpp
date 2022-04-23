@@ -24,6 +24,7 @@ class Student
     }
     //NOTE: By default, all methods declared inside a class are called instance methods, meaning they cannaot be called or invoked
     //without first creating an instance(object) of a class. Use the keyword 'static' in front of the return-type to override this rule.
+    //By default, all instance methods are non-static in nature, meaning they HAVE to be called using an object
     //Class function declaration: Functions on which objects of a class can be called. Can defined inside or outside the class
     void makeAverage();
     void printStudentArray();
