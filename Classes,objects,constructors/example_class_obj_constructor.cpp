@@ -47,6 +47,8 @@ int main()
 {
     int n,m1,m2,r;
     string nm;
+    Student temp(16,"Niladri",2,3,5);
+    temp.printStudentArray();
     cout<<"Enter the number of students:"<<endl;
     cin>>n;
     Student *array[n];      //array of class pointers
