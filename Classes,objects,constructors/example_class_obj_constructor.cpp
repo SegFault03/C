@@ -66,5 +66,7 @@ int main()
     }
     for(int i=0;i<n;i++)
     array[i]->printStudentArray();
+    using st=Student; //Demonstrating the use of 'using' keyword, which functions similarly...
+    //as the typedef keyword. Here st can now be used to create objects of type 'Student'
 }
 
