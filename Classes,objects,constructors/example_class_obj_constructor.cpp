@@ -14,6 +14,7 @@ class Student
     double avg;
 
     //Class constructor: Special function having the same name as the class that gets called as soon as an object of the class is created
+    //Constructors can NEVER return any value
     Student(int a, string s, int m, int m2, double avrg)
     {
         this->Roll=a;
@@ -22,7 +23,7 @@ class Student
         this->marks2=m2;
         this->avg=avrg;
     }
-    //NOTE: By default, all methods declared inside a class are called instance methods, meaning they cannaot be called or invoked
+    //NOTE: By default, all methods declared inside a class are called instance/non-static methods, meaning they cannaot be called or invoked
     //without first creating an instance(object) of a class. Use the keyword 'static' in front of the return-type to override this rule.
     //By default, all instance methods are non-static in nature, meaning they HAVE to be called using an object
     //Class function declaration: Functions on which objects of a class can be called. Can defined inside or outside the class
@@ -47,15 +48,16 @@ int main()
 {
     int n,m1,m2,r;
     string nm;
-    Student temp(16,"Niladri",2,3,5);
-    temp.printStudentArray();
+    Student temp(16,"Niladri",2,3,5);       //creating a 'Student' type object with the name 'temp'
+    temp.printStudentArray();               //all member methods/attributes of an object can be called using the '.' operator
     cout<<"Enter the number of students:"<<endl;
     cin>>n;
     Student *array[n];      //array of class pointers
     for(int i=0;i<n;i++)
     {
         cout<<"Enter name:"<<endl;
-        ws(cin);
+        ws(cin);            //ws stands for 'white-space', clears the input stream so that the '\n' character that is automatically entered 
+                            //when pressing the 'Enter' button is not accepted as a character when entering a string
         getline(cin,nm);
         cout<<"Enter roll, marks1, marks2"<<endl;
         cin>>r>>m1>>m2;
@@ -65,7 +67,7 @@ int main()
         //Had it been an object instead of a pointer, statement would've looked like <Object-Name>.<Member-function or Memeber-variable>
     }
     for(int i=0;i<n;i++)
-    array[i]->printStudentArray();
+    array[i]->printStudentArray();      //When using a pointer to manipulate/access an object, use the error '->' operator to access the member attributes/methods
     using st=Student; //Demonstrating the use of 'using' keyword, which functions similarly...
     //as the typedef keyword. Here st can now be used to create objects of type 'Student'
 }

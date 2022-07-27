@@ -35,7 +35,8 @@ int main()
     cout<<"Printing int: "<<my_funcs::max<int>(a,b)<<endl; //using scope operator :: with my_functs to specify namespace to which max() belongs.
     cout<<"Printing double: "<<my_funcs::max<double>(c,d)<<endl; 
     cout<<"Printing char: "<<my_funcs::max<char>(e,f)<<endl; 
-    cout<<"Test:"<<my_funcs::max<int>('a','b')<<endl; //since 'int' is specified, T=int is assigned, and 'a' and 'b' is implicitly converted into int.
+    using number=int;                                   //demonstrating the use of 'using' keyword
+    cout<<"Test:"<<my_funcs::max<number>('a','b')<<endl; //since 'int' is specified, T=int is assigned, and 'a' and 'b' is implicitly converted into int.
     //This means T can only be of one type at any given instance. It cannot be both double, int at the same time
     //In such cases, the dissimilar type will be implicitly converted into the specified type.
     //In the above three cases, compiler will create a int, double and char version of max() and implement function overloading.
